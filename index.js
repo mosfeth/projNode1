@@ -9,12 +9,19 @@ app.get("/:nome/:lang",(req, res)=>{              // Rota padrao ao acessar a ro
     var nome = req.params.nome;
     var lang = req.params.lang;
     var exibirMsg = true;
+
+    var produtos = [
+        {nome: "Doritos",preco:3.14},
+        {nome: "Coca-cola",preco:5},
+        {nome:"Leite",preco:1.45}
+    ]
     res.render("index",{
         nome: nome,
         lang: lang,
         empresa: "Cmostec",
         inscritos: 8000,
-        msg: exibirMsg
+        msg: exibirMsg,
+        produtos:produtos
     });              // Mando desenhar na tela a pagina html index que esta na pasta views
 });
 

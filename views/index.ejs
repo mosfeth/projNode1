@@ -19,11 +19,21 @@
     </p>
     <%= inscritos %>
 
-        <% if(msg){ %>
+        <% if(!msg){ %>
             <h3>Algo de errado aconteceu</h3>
             <%}else { %>
                 <h3>Tudo certo ate agora</h3>
                 <%} %>
+
+                    <% produtos.forEach(function(produto) { %>
+                        <hr>
+                        <h3>
+                            <%= produto.nome %>
+                        </h3>
+                        <h4>
+                            <%= produto.preco %>
+                        </h4>
+                        <% }) %>
 
 </body>
 
