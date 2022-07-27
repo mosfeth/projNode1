@@ -8,11 +8,13 @@ app.set('view engine','ejs');       // Estou dizendo para o express para usar o 
 app.get("/:nome/:lang",(req, res)=>{              // Rota padrao ao acessar a rota solicito dois parametos ao usuario
     var nome = req.params.nome;
     var lang = req.params.lang;
+    var exibirMsg = true;
     res.render("index",{
         nome: nome,
         lang: lang,
         empresa: "Cmostec",
-        inscritos: 8000
+        inscritos: 8000,
+        msg: exibirMsg
     });              // Mando desenhar na tela a pagina html index que esta na pasta views
 });
 
