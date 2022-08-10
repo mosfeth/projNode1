@@ -5,28 +5,18 @@ app.set('view engine','ejs');       // Estou dizendo para o express para usar o 
 app.use(express.static('public'));
 
 
-app.get("/:nome/:lang",(req, res)=>{              // Rota padrao ao acessar a rota solicito dois parametos ao usuario
-    var nome = req.params.nome;
-    var lang = req.params.lang;
-    var exibirMsg = true;
-
-    var produtos = [
-        {nome: "Doritos",preco:3.14},
-        {nome: "Coca-cola",preco:5},
-        {nome:"Leite",preco:1.45}
-    ]
-    res.render("index",{
-        nome: nome,
-        lang: lang,
-        empresa: "Cmostec",
-        inscritos: 8000,
-        msg: exibirMsg,
-        produtos:produtos
-    });              // Mando desenhar na tela a pagina html index que esta na pasta views
+app.get("/",(req, res)=>{              // Rota padrao ao acessar a rota solicito dois parametos ao usuario
+ 
+    res.render("index");
+      
+                
 });
 
+app.get("/perguntar",(req,res)=> {
+res.render("perguntar");
+});
 
-app.listen(8080,()=>{                 // inicio o servidor
+app.listen(4026,()=>{                 // inicio o servidor
     console.log("App rodando!");
     
 });
