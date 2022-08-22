@@ -8,13 +8,17 @@ app.use(express.static('public'));
 app.get("/",(req, res)=>{              // Rota padrao ao acessar a rota solicito dois parametos ao usuario
  
     res.render("index");
-      
-                
+                    
 });
 
 app.get("/perguntar",(req,res)=> {
 res.render("perguntar");
 });
+
+app.post("/salvarpergunta",(req,res)=>{
+ res.send("Formulario recebido");
+})
+
 
 app.listen(4026,()=>{                 // inicio o servidor
     console.log("App rodando!");
